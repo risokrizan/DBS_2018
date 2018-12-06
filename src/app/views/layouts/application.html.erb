@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <script type="text/javascript" src="jquery.tablesorter.js"></script>
+  <title>DBS2018</title>
+  <%= csrf_meta_tags %>
+
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+</head>
+
+<body>
+
+<script type="text/javascript">
+    $('.datepicker').pickadate({
+        selectMonths: true, // Creates a dropdown to control month
+        selectYears: 15, // Creates a dropdown of 15 years to control year,
+        today: 'Today',
+        clear: 'Clear',
+        close: 'Ok',
+        closeOnSelect: false // Close upon selecting a date,
+    });
+</script>
+
+<div class="sidenav">
+  <a href="/announcements"> <%= image_tag("logo.png", :alt => "logo", :class => "img-responsive") %></a>
+  <a href="/announcements" >News</a>
+  <a href="/banks">Banks</a>
+  <a href="/customers">Customers</a>
+  <a href="/accounts">Accounts</a>
+  <a href="/transactions">Transactions</a>
+  <a href="/computers">Computers</a>
+  <a href="/pools">Pools</a>
+  <a href="/report">Report</a>
+</div>
+
+<div class="main">
+  <%= yield %>
+</div>
+
+
+</body>
+</html>

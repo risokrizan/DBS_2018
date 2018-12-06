@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  cpu_name: MyString
+  cpu_clock: 1.5
+  cpu_cores: 1
+  gpu_name: MyString
+  gpu_clock: 1.5
+  gpu_cores: 1
+
+two:
+  cpu_name: MyString
+  cpu_clock: 1.5
+  cpu_cores: 1
+  gpu_name: MyString
+  gpu_clock: 1.5
+  gpu_cores: 1

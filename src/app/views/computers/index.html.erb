@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Computers</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Cpu name</th>
+      <th>Cpu clock</th>
+      <th>Cpu cores</th>
+      <th>Gpu name</th>
+      <th>Gpu clock</th>
+      <th>Gpu cores</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @computers.each do |computer| %>
+      <tr>
+        <td><%= computer.cpu_name %></td>
+        <td><%= computer.cpu_clock %></td>
+        <td><%= computer.cpu_cores %></td>
+        <td><%= computer.gpu_name %></td>
+        <td><%= computer.gpu_clock %></td>
+        <td><%= computer.gpu_cores %></td>
+        <td><%= link_to 'Show', computer,class: "waves-effect waves-light btn" %></td>
+        <td><%= link_to 'Edit', edit_computer_path(computer),class: "waves-effect waves-light btn" %></td>
+        <td><%= link_to 'Destroy', computer, method: :delete, data: { confirm: 'Are you sure?' },class: "waves-effect waves-light btn" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+<ul class="pagination">
+  <%= will_paginate @computers %>
+</ul>
+<div class="fixed-action-btn horizontal direction-top direction-left">
+  <%= link_to material_icon.add, new_computer_path, {:class=>"btn-floating btn-large waves-effect waves-light red" } %>
+</div>

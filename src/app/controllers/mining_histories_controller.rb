@@ -1,0 +1,2 @@
+class MiningHistoriesController < ApplicationController
+end

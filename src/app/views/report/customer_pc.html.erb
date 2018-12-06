@@ -1,0 +1,30 @@
+<h1>Customers PCs Report</h1>
+<table>
+  <thead>
+  <tr>
+    <th>Meno</th>
+    <th>Priezvisko</th>
+    <th>Pocet PC</th>
+    <th>Suma frekvencie CPU</th>
+    <th>Suma jadier CPU</th>
+    <th>Suma frekvencie GPU</th>
+    <th>Suma jadier GPU</th>
+    <th colspan="7"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @vysledok.each do |vysledok| %>
+    <tr>
+      <td><%= vysledok.fetch('first_name') %></td>
+      <td><%= vysledok.fetch('last_name') %></td>
+      <td><%= vysledok.fetch('pocet_pc') %></td>
+      <td><%= vysledok.fetch('cpu_cores') %></td>
+      <td><%= vysledok.fetch('cpu_clock') %></td>
+      <td><%= vysledok.fetch('gpu_cores') %></td>
+      <td><%= vysledok.fetch('gpu_clock') %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= will_paginate @vysledok %>

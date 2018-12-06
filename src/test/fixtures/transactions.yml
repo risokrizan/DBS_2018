@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  name: MyString
+  type: 
+  ammount: 1
+  date: 2018-03-16 22:09:49
+
+two:
+  name: MyString
+  type: 
+  ammount: 1
+  date: 2018-03-16 22:09:49

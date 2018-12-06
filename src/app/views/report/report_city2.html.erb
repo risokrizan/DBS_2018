@@ -1,0 +1,30 @@
+<h1>Bank Pool Report</h1>
+<table>
+  <thead>
+  <tr>
+    <th>Nazov Banky</th>
+    <th>Mesto</th>
+    <th>Ulica</th>
+    <th>Popisne cislo</th>
+    <th>Datum zalozenia</th>
+    <th>Pocet poolov</th>
+    <th>Celkovy príjem z poolov</th>
+    <th colspan="7"></th>
+  </tr>
+  </thead>
+
+  <tbody>
+  <% @vysledok2.each do |vysledok| %>
+    <tr>
+      <td><%= vysledok.fetch('bank_name') %></td>
+      <td><%= vysledok.fetch('city') %></td>
+      <td><%= vysledok.fetch('street') %></td>
+      <td><%= vysledok.fetch('street_number') %></td>
+      <td><%= vysledok.fetch('date') %></td>
+      <td><%= vysledok.fetch('pools_count') %></td>
+      <td><%= vysledok.fetch('pool_income') %></td>
+    </tr>
+  <% end %>
+  </tbody>
+</table>
+<%= will_paginate @vysledok2 %>

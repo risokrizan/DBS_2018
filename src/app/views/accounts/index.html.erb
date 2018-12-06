@@ -1,0 +1,37 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Accounts</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Number</th>
+      <th>Balance</th>
+      <th>Currency</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @accounts.each do |account| %>
+      <tr>
+        <td><%= account.number %></td>
+        <td><%= account.balance %></td>
+        <td><%= account.currency_id %></td>
+        <td><%= link_to 'Show', account,class: "waves-effect waves-light btn" %></td>
+        <td><%= link_to 'Edit', edit_account_path(account),class: "waves-effect waves-light btn" %></td>
+        <td><%= link_to 'Destroy', account, method: :delete, data: { confirm: 'Are you sure?' },class: "waves-effect waves-light btn" %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<ul class="pagination">
+  <%= will_paginate @accounts %>
+</ul>
+<div class="fixed-action-btn horizontal direction-top direction-left">
+  <%= link_to material_icon.add, new_account_path, {:class=>"btn-floating btn-large waves-effect waves-light red" } %>
+</div>
+

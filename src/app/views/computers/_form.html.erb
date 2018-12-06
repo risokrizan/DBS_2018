@@ -1,0 +1,47 @@
+<%= form_with(model: computer, local: true) do |form| %>
+  <% if computer.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(computer.errors.count, "error") %> prohibited this computer from being saved:</h2>
+
+      <ul>
+      <% computer.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :cpu_name %>
+    <%= form.text_field :cpu_name, id: :computer_cpu_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cpu_clock %>
+    <%= form.text_field :cpu_clock, id: :computer_cpu_clock %>
+  </div>
+
+  <div class="field">
+    <%= form.label :cpu_cores %>
+    <%= form.number_field :cpu_cores, id: :computer_cpu_cores %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gpu_name %>
+    <%= form.text_field :gpu_name, id: :computer_gpu_name %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gpu_clock %>
+    <%= form.text_field :gpu_clock, id: :computer_gpu_clock %>
+  </div>
+
+  <div class="field">
+    <%= form.label :gpu_cores %>
+    <%= form.number_field :gpu_cores, id: :computer_gpu_cores %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>

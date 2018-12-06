@@ -1,0 +1,62 @@
+
+
+
+<%= form_with(model: customer_pc, local: true) do |form| %>
+  <% if customer_pc.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(customer_pc.errors.count, "error") %> prohibited this customer from being saved:</h2>
+
+      <ul>
+      <% customer_pc.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <i class="material-icons prefix">account_circle</i>
+    <%= form.label :first_name %>
+    <%= form.text_field :first_name, id: :customer_first_name %>
+  </div>
+
+  <div class="field">
+    <i class="material-icons prefix">account_circle</i>
+    <%= form.label :last_name %>
+    <%= form.text_field :last_name, id: :customer_last_name %>
+  </div>
+
+  <div class="field">
+    <i class="material-icons prefix">date_range</i>
+    <%= form.label :birth_date %>
+    <%= form.text_field :birth_date, id: :customer_birth_date,class: "datepicker" %>
+  </div>
+
+  <div class="field">
+    <i class="material-icons prefix">credit_card</i>
+    <%= form.label :id_card_number %>
+    <%= form.text_field :id_card_number, id: :customer_id_card_number %>
+  </div>
+
+  <div class="field">
+    <i class="material-icons prefix">home</i>
+    <%= form.label :street %>
+    <%= form.text_field :street, id: :customer_street %>
+  </div>
+
+  <div class="field">
+    <i class="material-icons prefix">home</i>
+    <%= form.label :city %>
+    <%= form.text_field :city, id: :customer_city %>
+  </div>
+
+  <div class="field">
+    <i class="material-icons prefix">local_post_office</i>
+    <%= form.label :zip %>
+    <%= form.number_field :zip, id: :customer_zip %>
+  </div>
+
+  <div class="actions btn waves-effect waves-light">
+    <%= form.submit %>
+  </div>
+<% end %>

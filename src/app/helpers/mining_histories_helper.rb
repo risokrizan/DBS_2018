@@ -1,0 +1,2 @@
+module MiningHistoriesHelper
+end

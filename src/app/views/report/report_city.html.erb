@@ -1,0 +1,7 @@
+<h3>Find customer by City</h3>
+<%= form_tag("/city_report2", method: "get") do %>
+  <%= text_field_tag(:City) %>
+  <%= submit_tag("Hladaj") %>
+<% end %>
+
+<%= link_to material_icon.arrow_back, report_path %>
